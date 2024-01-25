@@ -6,6 +6,19 @@
 
 ## Cleaning The Data
 
+Before we could start the Machine Learning, we needed to take the `Covid MOONSHOT` data and choose the relevant compounds
+
+We started by creating a relational database to handle the data
+
+The database had 3 tables within it (`compounds`, `assays` and `rule_of_five_compliant_compounds`)
+
+`Compounds` :
+
+`Assays` :
+
+`rule_of_five_compliant_compounds` :
+
+
 ```c
 import re
 import csv
@@ -33,14 +46,6 @@ data['rule_of_five_violations'] = data.apply(rule_of_five_violations, axis=1)
 # Filter out compounds that violate more than one rule
 rule_of_five_data = data[data['rule_of_five_violations'] <= 1]
 
-```
-
-
-> [!NOTE]
-The
-
-
-```c
 # Extract data for the 'compounds' and 'rule_of_five_compliant_compounds' tables
 smiles_data = data[['CID', 'SMILES', 'HBD', 'HBA', 'MW', 'cLogP']].drop_duplicates()
 
